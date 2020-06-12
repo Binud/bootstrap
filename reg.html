@@ -1,0 +1,129 @@
+  {% extends 'author_app/base.html' %}
+  {% load static %}
+  {% block content %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+      <h1>Journal Submission Process</h1>
+      <h2>Plan your writing before you begin</h2>
+      <a href="#login" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+    <!-- ======= login Section ======= -->
+    <section id="login" class="login">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h3> Register </h3>
+        <br>
+          <form action="{% url 'author_app:register' %}" method="post">
+          {% csrf_token %}
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="name">Name:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="name" name="name">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="email">Email:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="email" name="email">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="username">Username:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="username" name="username">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="password">Password:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="password" name="password">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="password">Type:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <select name="type" id="type" class="form-control col-sm-12 col-md-8 col-lg-5">
+                    <option value="">Select Type</option>
+                    <option value="author">Author</option>
+                    <option value="reviewer">Reviewer</option>
+                    <option value="editor">Editor</option>
+                </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group visible visible-jquery">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="password">Department/Center:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="department" name="department">
+                </div>
+            </div>
+            <br>
+            </div>
+            <div class="form-group visible visible-jquery">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="password">Contact No:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="contact" name="contact">
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <style>
+                .visible{
+                    display:none;
+                }
+            </style>
+            
+            <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+            <script>
+                $("#type").on("change",function(){
+                var val = $(this).find('option:selected').val();
+                if(val == 'editor')
+                {
+                    $(".visible-jquery").removeClass("visible");
+                }
+                else
+                {
+                    $(".visible-jquery").addClass("visible");
+                }
+                });
+            </script>
+            <div class="form-group">
+            <input type="submit" name="register" class="btn btn-success" value="Register Now"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+  </main><!-- End #main -->
+  {% endblock %}

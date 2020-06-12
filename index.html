@@ -1,0 +1,166 @@
+
+  <!-- ======= Hero Section ======= -->
+  <html>
+  <head>
+    <title>HOMEPAGE</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body, html {
+    height: 100%;
+    margin: 0;
+  }
+  hr.new{
+      border: 5px solid blue;
+      border-radius: 2px;
+  }
+  /* .bg {
+    /* The image used */
+    background-image: url("wall.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  } */
+  
+  .btn {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.7s;
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41;
+    color: white;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  u { 
+  text-decoration: underline;
+}
+    </style>
+    <!-- <script>
+      function myfun()
+          {
+          var a=document.getElementById("pid").value;
+          var b=document.getElementById("cid").value;
+          if(a.length<8 || a.length>12){
+              document.getElementById("block1").innerHTML="password must be between 8-12 characters";
+              return false;
+          }
+          if(a!=b){
+              document.getElementById("block2").innerHTML="passwords does not matche";
+              return false;
+          }
+  
+      }
+      </script> -->
+      
+  </head>
+  <!-- <section id="hero">
+    <div class="hero-container" data-aos="fade-up">
+      <h1>Journal Submission Process</h1>
+      <h2>Plan your writing before you begin</h2>
+      <a href="#login" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
+    </div>
+  </section>End Hero -->
+
+  <div>
+		<div class="container">
+			<div class="row">
+		<div class="col-md-2">
+			<img src="image/logo.jpg">
+		</div>
+        <div class="col-md-8">
+        <br><br>
+			<img src="image/logo1.png"><b><p style="font-size:40px; color:red;">Journal Submission Process</p></b>
+		</div>
+        </div>
+        </div>
+        </div><hr class="new">
+
+  <main id="main">
+    <!-- ======= login Section ======= -->
+    <section id="login" class="login">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <b></b><center><u><h3> Login </h3></u></center></b>
+        <br>
+          <form action="{% url 'author_app:author-login-check' %}" method="post">
+          <!-- {% csrf_token %} -->
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="username">Username:</label>
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="username" name="username">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-5 col-lg-5 text-right">
+                <label for="password">Password:</label>
+                
+                </div>
+                <div class="col-md-6 col-lg-6 pull-left">
+                <input type="text" class="form-control col-sm-12 col-md-8 col-lg-5" id="password" name="password">
+          
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+              <div class="row">
+                <div class="col-mid-2"></div>
+                <div class="col-mid-8"><center>
+                <input type="submit" name="author_login" class="btn btn-info" value="Author Login"/>
+      
+            <input type="submit" name="reviewer_login" class="btn btn-info" value="Reviewer Login"/>
+            <input type="submit" name="editor_login" class="btn btn-info" value="Editor Login"/>
+            <input type="submit" name="publisher_login" class="btn btn-info" value="Publisher Login"/><br><br>
+            <a href="{% url 'author_app:register-view' %}" class="btn btn-success">Register Now<a/>
+            </center>
+          </div>
+          <div class="col-mid-2"></div>
+        </div></div>
+            
+           
+   
+           
+    
+            
+          </form>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+  </main>
+  </html><!-- End #main -->
+  
